@@ -1,5 +1,6 @@
 import os
 import re
+from typing import NoReturn
 
 import httpx
 from nonebot import on_command, logger
@@ -10,7 +11,7 @@ On = on_command("fo-on", aliases={"开启念佛模式", "开启诵经模式"})
 Off = on_command("fo-off", aliases={"关闭念佛模式", "关闭诵经模式"})
 
 
-async def create_cache(group_id, group_name, group_card) -> None:
+async def create_cache(group_id, group_name, group_card) -> NoReturn:
     """创建群信息缓存"""
     # 若不存在文件夹则进行创建
     if not os.path.exists("GroupCache"):
@@ -28,9 +29,8 @@ async def create_cache(group_id, group_name, group_card) -> None:
 async def load_cache() -> tuple[str, str, str]:
     """读取群信息缓存"""
     for filename in os.listdir("GroupCache/"):
-        pattern = '[A-Za-z0-9_\u4e00-\u9fa5]+'
-        group_name = re.findall('({})：{}\.jpg'.format(pattern, pattern), filename)[0]
-        bot_card = re.findall('{}：({})\.jpg'.format(pattern, pattern), filename)[0]
+        group_name = re.findall('(.*?)：.*?\.jpg', filename)[0]
+        bot_card = re.findall('.*?：(.*?)\.jpg', filename)[0]
         logger.success("读取群信息缓存成功！")
         return group_name, bot_card, filename
 
