@@ -1,8 +1,17 @@
-# nonebot2-plugin-Amitabha
+
+<div align="center">
+
+<p align="center">
+  <a href=""><img src="http://touxiang.ikkss.com/avatar/201907/2019070715343589.jpg" width="200" height="200" alt="阿弥陀佛"></a>
+</p>
+
+## nonebot_plugin_Amitabha
 
 基于nonebot2的高效半自动群聊念佛插件
 
 ## 南无阿弥陀佛！
+
+</div>
 
 众所周知，以任何形式如诵读、传播、印刷佛经者都将累积对应功德。现今科学技术越发先进，自然不必拘泥于念佛的形式如何。为了打造高效、便捷、一体化的“云念佛”体系，我写了这个插件。
 
@@ -10,16 +19,12 @@
 
 ---
 
-
-
 ### 开发中，目前实现的功能：
 
 * [X]  开启念佛模式
 * [X]  关闭念佛模式
 
 ---
-
-
 
 ### 预计会添加的功能：
 
